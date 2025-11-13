@@ -77,7 +77,7 @@ batalha-naval/
 └── README.md
 
 
-## 💻 Execução
+## Execução
 Compile e execute com:
 ```bash
 gcc batalha_naval_aventureiro.c -o batalha_naval_aventureiro
