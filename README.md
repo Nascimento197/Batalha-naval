@@ -99,6 +99,57 @@ Saída Esperada (Exemplo)
 
 Legenda: 0 = Água | 3 = Navio
 
+# Batalha Naval em C - Nível Mestre
+
+## Objetivo
+Desafio final do projeto Batalha Naval. Agora, o programa exibe áreas de efeito (AoE) de habilidades especiais sobre o tabuleiro.
+
+## Funcionalidades
+- Tabuleiro 10x10 com navios fixos
+- 3 habilidades especiais:
+  - **Cone** (formato triangular)
+  - **Cruz** (formato +)
+  - **Octaedro** (formato losango)
+- Sobreposição dinâmica das áreas de efeito com valor `5`
+- Exibição organizada no console
+
+##Explicação do Código
+| Seção                      | Descrição                                                                                                 |
+| -------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `cone`, `cruz`, `octaedro` | Matrizes 5x5 que representam o formato das habilidades.                                                   |
+| **CONE**                   | Cria uma pirâmide invertida (formato triangular).                                                         |
+| **CRUZ**                   | Marca a linha e coluna centrais da matriz.                                                                |
+| **OCTAEDRO**               | Usa a distância de Manhattan para formar um losango.                                                      |
+| **Sobreposição**           | Centraliza cada matriz no ponto definido do tabuleiro e aplica `5` onde há `1` (sem sobrescrever navios). |
+| **Condicionais**           | Garantem que o efeito não saia dos limites 10x10.                                                         |
+
+## Estrutura do Projeto
+batalha-naval/
+│
+├── batalha_naval_mestre.c
+└── README.md
+
+
+## Execução
+```bash
+gcc batalha_naval_mestre.c -o batalha_naval_mestre
+./batalha_naval_mestre
+```
+## Exemplo de Saída
+=== TABULEIRO DE BATALHA NAVAL - NIVEL MESTRE ===
+
+5 5 3 3 3 5 5 0 0 0
+0 5 5 5 5 5 5 0 0 0
+0 0 3 0 0 0 0 5 0 0
+0 0 0 5 5 5 5 5 0 0
+0 0 0 5 3 5 5 5 0 0
+0 0 0 5 5 5 5 5 0 0
+0 0 5 5 5 3 5 5 0 0
+0 0 0 5 5 3 5 0 0 0
+0 0 0 0 5 3 5 0 0 0
+0 0 0 0 5 5 0 0 0 0
+
+Legenda: 0 = Água | 3 = Navio | 5 = Área de Habilidade
 
 
 
